@@ -1,0 +1,35 @@
+﻿@model IEnumerable<OrderPayment>
+@{
+}
+
+<h6>
+    <a asp-action="Create">Add OrderPayment</a>
+</h6>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => payment.Amount)</td>
+           
+                <td>@Html.DisplayFor(modelItem => payment.PaymentDate)</td>
+           
+                <td>@Html.DisplayFor(modelItem => payment.OrderId)</td>
+            </tr>
+        }
+    </tbody>
+</table>

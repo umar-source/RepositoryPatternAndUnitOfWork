@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Order>
+
+@{
+}
+
+<h6>
+    <a asp-action="Create">Create Order</a>
+</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Total)</th>
+            <th>@Html.DisplayNameFor(model => model.CustomerId)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(itemModel => order.Id)</td>
+                <td>@Html.DisplayFor(itemModel => order.OrderDate)</td>
+                <td>@Html.DisplayFor(itemModel => order.Total)</td>
+                <td>@Html.DisplayFor(itemModel => order.CustomerId)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@order.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@order.Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Customer>
+@{
+}
+
+<h6>
+    <a asp-action="Create">Create Customer</a>
+</h6>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => customer.CustomerId)</td>
+                <td>@Html.DisplayFor(modelItem => customer.Name)</td>
+                <td>@Html.DisplayFor(modelItem => customer.Email)</td>
+                <td>@Html.DisplayFor(modelItem => customer.Age)</td>
+                <td>@Html.DisplayFor(modelItem => customer.Phone)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@customer.CustomerId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@customer.CustomerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CustomerAddress>
+@{
+}
+
+<h6>
+    <a asp-action="Create">Add CustomerAddress</a>
+</h6>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var address in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => address.Street)</td>
+                <td>@Html.DisplayFor(modelItem => address.City)</td>
+                <td>@Html.DisplayFor(modelItem => address.State)</td>
+                <td>@Html.DisplayFor(modelItem => address.Country)</td>
+                <td>@Html.DisplayFor(modelItem => address.ZipCode)</td>
+                <td>@Html.DisplayFor(modelItem => address.CustomerId)</td>
+            </tr>
+        }
+    </tbody>
+</table>

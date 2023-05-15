@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ProductCategory>
+@{
+}
+
+<h6>
+    <a asp-action="Create">Add ProductCategory</a>
+</h6>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => category.Name)</td>
+            </tr>
+        }
+    </tbody>
+</table>
